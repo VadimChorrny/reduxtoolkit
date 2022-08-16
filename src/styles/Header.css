@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+
+.header__container {
+  width: 100%;
+  color: white;
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 35%;
+  margin-top: 10px;
+}
+
+.header__container_menu {
+  display: flex;
+  flex-direction: row;
+  gap: 15%;
+}
+
+.header__container_logo:hover {
+  color: #ccccff;
+  transition: 0.5s;
+}
+
+.menu__item:hover {
+  color: #ccccff;
+  transition: 0.5s;
+}
