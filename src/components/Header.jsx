@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '../styles/Header.css';
 
-function Header() {
+export default memo(function Header() {
   return (
     <div className='header__container'>
       <div className='header__container_logo'>Logo</div>
@@ -12,6 +12,4 @@ function Header() {
       </div>
     </div>
   );
-}
-
-export default Header;
+});

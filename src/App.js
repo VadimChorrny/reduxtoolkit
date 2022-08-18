@@ -1,5 +1,6 @@
 import Main from './pages/Main.jsx';
 import Layout from './components/Layout.jsx';
+import Todo from './pages/Todo.jsx';
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <Main />
       <Footer /> */}
       <Layout>
-        <Main />
+        {/* <Main /> */}
+        <Todo />
       </Layout>
     </>
   );

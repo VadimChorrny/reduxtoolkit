@@ -21,9 +21,11 @@
 .header__container_logo:hover {
   color: #ccccff;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .menu__item:hover {
   color: #ccccff;
   transition: 0.5s;
+  cursor: pointer;
 }

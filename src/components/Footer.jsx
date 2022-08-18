@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import '../styles/Footer.css';
 
-function Footer() {
+export default memo(function Footer() {
   return (
     <div className='footer__container'>
       <div className='footer__container_item'>About the service</div>
@@ -9,6 +9,4 @@ function Footer() {
       <div className='footer__container_item'>Social media</div>
     </div>
   );
-}
-
-export default Footer;
+});
