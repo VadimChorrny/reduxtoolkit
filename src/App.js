@@ -1,13 +1,10 @@
-import Main from './pages/Main.jsx';
+// import Main from './pages/Main.jsx';
 import Layout from './components/Layout.jsx';
 import Todo from './pages/Todo.jsx';
 
 function App() {
   return (
     <>
-      {/* <Header />
-      <Main />
-      <Footer /> */}
       <Layout>
         {/* <Main /> */}
         <Todo />

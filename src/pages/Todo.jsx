@@ -1,35 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  addTodo,
-  removeLastTodo,
-  increment,
-  decrement,
-} from '../store/toolkitSlice';
+import { createTodo, removeTodo } from '../store/todo/slice';
+import '../styles/todo/todo.css'; // import styles
 
 function Todo() {
-  const count = useSelector((state) => state.toolkit.count);
-  const todos = useSelector((state) => state.toolkit.todos);
+  const todos = useSelector((store) => store.todo.todos);
   const dispatch = useDispatch();
 
+  //state
+  const [todo, setTodo] = useState('');
+
   return (
-    <div>
-      <h1>Counter {count}</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-      <button onClick={() => dispatch(removeLastTodo())}>
-        Remove last todo
-      </button>
-      <button onClick={() => dispatch(addTodo(prompt()))}>Create todo</button>
-      <br />
-      <h3>Todos</h3>
-      <ul>
+    <div className='todo__container'>
+      <h1>Todo list</h1>
+      <div className='todo__container_items'>
         {todos.length > 0 ? (
-          todos.map((todo, idx) => <li key={idx}>{todo}</li>)
+          todos.map((todo, idx) => (
+            <div
+              key={idx}
+              className='item'
+              onClick={() => dispatch(removeTodo(idx))}
+            >
+              <span>✅</span>
+              {todo}{' '}
+            </div>
+          ))
         ) : (
-          <h1>List is empty</h1>
+          <div>List is empty🫗</div>
         )}
-      </ul>
+      </div>
+      <div className='todo__container_input'>
+        <div className='input__block'>
+          <input
+            type='text'
+            placeholder='Enter your todo 😇'
+            onChange={(event) => {
+              setTodo(event.target.value);
+            }}
+            value={todo}
+          />
+        </div>
+        <button
+          onClick={() => {
+            todo === '' ? alert('Error!') : dispatch(createTodo(todo));
+            setTodo('');
+          }}
+        >
+          Create
+        </button>
+      </div>
     </div>
   );
 }
