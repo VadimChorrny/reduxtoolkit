@@ -29,3 +29,8 @@
   transition: 0.5s;
   cursor: pointer;
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+}
